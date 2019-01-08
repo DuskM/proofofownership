@@ -15,7 +15,7 @@ class AddDomainIdToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->integer('domain_id');
+            $table->integer('domain_id')->default(0);
         });
     }
 
