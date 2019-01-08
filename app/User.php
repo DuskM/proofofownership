@@ -27,4 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function domain(){
+
+
+        return $this->hasMany('App\Domain');
+
+
+    }
 }
