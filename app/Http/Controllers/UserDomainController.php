@@ -23,5 +23,10 @@ class UserDomainController extends Controller
         $domains = Domain::orderBy('created_at', 'desc')->paginate(10);
         return view('users.domains.index')->with('domains', $domains);
     }
+    public function store(Request $request)
+    {
+        Domain::create($request->all());
+        return redirect('/domain');
+    }
 
 }
