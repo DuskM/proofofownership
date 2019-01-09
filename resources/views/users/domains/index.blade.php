@@ -16,8 +16,15 @@
     </div>
     <div class="col-sm6">
     <h3>Domains</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Domain</th>
+        </thead>
+        <tbody>
     @if(count($domains) > 0)
         @foreach($domains as $domain)
+<<<<<<< HEAD
             <div class="well">
                 <div class="row">
                     <div class="col-md-4 col-sm-4">
@@ -29,6 +36,11 @@
                 </div>
             </div>
 
+=======
+            <tr>
+            <td><a href="/domains/{{$domain->id}}">{{$domain->urlname}}</a></td>
+            </tr>
+>>>>>>> master
         @endforeach
         {{$domains->links()}}
     @else

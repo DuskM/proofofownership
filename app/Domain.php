@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Domain extends Model
 {
@@ -11,7 +12,7 @@ class Domain extends Model
         'user_id',
     ];
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User::class');
     }
 
 }
