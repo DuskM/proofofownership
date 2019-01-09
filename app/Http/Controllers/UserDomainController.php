@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Domain;
 use Illuminate\Http\Request;
+use Keygen;
 use Illuminate\Database\Eloquent\Model;
-
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,6 +24,7 @@ class UserDomainController extends Controller
         $domains = Domain::paginate(10);
         return view('users.domains.index', compact('domains','categories'));
     }
+
     public function store(Request $request)
     {
         $domains = Domain::paginate(10);
@@ -36,7 +37,8 @@ class UserDomainController extends Controller
 
             //
             $domain = Domain::find($id);
-            return view('users.domains.show')->with('domain', $domain);
+            $key = Keygen::numeric(10)->generate();
+            return view('users.domains.show', compact('domain', 'key'));
 
     }
 
@@ -48,5 +50,6 @@ class UserDomainController extends Controller
         $userId = $user->id;
         return view('users.domains.create', compact('user', 'userId'));
     }
+
 
 }

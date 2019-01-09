@@ -12,7 +12,7 @@
             @if(count($domains) > 0)
                 @foreach($domains as $domain)
                     <tr>
-                        <td><a href="/domains/{{$domain->id}}">{{$domain->urlname}}</a></td>
+                        <td><a href="/domain/{{$domain->id}}">{{$domain->urlname}}</a></td>
                     </tr>
                 @endforeach
                 {{$domains->links()}}
