@@ -26,7 +26,7 @@ class UserDomainController extends Controller
     public function store(Request $request)
     {
         Domain::create($request->all());
-        return redirect('/domain');
+        return "This Works";
     }
 
 }

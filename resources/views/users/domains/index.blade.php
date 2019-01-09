@@ -2,11 +2,11 @@
 @section('content')
     <div class="col-sm6">
 
-        {!! Form::open(['method'=>'POST', 'action'=>'UserDomainController@store']) !!}
+        {!! Form::open(['method'=>'POST', 'action'=>['UserDomainController@store', $user->id]]) !!}
             @csrf
             <div class="form-group">
-                {!! Form::label('domain', 'Domain:') !!}
-                {!! Form::text('domain', null, ['class'=>'form-control']) !!}
+                {!! Form::label('urlname', 'Domain:') !!}
+                {!! Form::text('urlname', null, ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::submit('Add Domain', ['class'=>'btn btn-primary']) !!}

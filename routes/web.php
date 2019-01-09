@@ -20,6 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/domain', 'UserDomainController@index');
-Route::get('/domain/create', function (){
-   return view('users.domains.create');
-});
+Route::post('/domain/create', 'UserDomainController@store');
