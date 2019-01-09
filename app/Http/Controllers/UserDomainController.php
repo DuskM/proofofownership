@@ -29,4 +29,16 @@ class UserDomainController extends Controller
         return "This Works";
     }
 
+    public function show($id){
+
+            //
+            $domain = Domain::find($id);
+            return view('users.domains.show')->with('domain', $domain);
+
+    }
+
+    public function create(){
+        return view('users.domains.create');
+    }
+
 }

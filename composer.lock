@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2eb6eae3f4fbceab2042f935010a1a7c",
+    "content-hash": "a929cd0aa268c691ba1258c81bd9bb96",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -639,7 +639,6 @@
         },
         {
             "name": "laravel/framework",
-<<<<<<< HEAD
             "version": "v5.7.20",
             "source": {
                 "type": "git",
@@ -650,18 +649,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/10cd20294b5668f90ba91996236834e71f7ff670",
                 "reference": "10cd20294b5668f90ba91996236834e71f7ff670",
-=======
-            "version": "v5.7.19",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "5c1d1ec7e8563ea31826fd5eb3f6791acf01160c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5c1d1ec7e8563ea31826fd5eb3f6791acf01160c",
-                "reference": "5c1d1ec7e8563ea31826fd5eb3f6791acf01160c",
->>>>>>> master
                 "shasum": ""
             },
             "require": {
@@ -794,11 +781,7 @@
                 "framework",
                 "laravel"
             ],
-<<<<<<< HEAD
             "time": "2019-01-08T14:39:11+00:00"
-=======
-            "time": "2018-12-18T14:00:38+00:00"
->>>>>>> master
         },
         {
             "name": "laravel/nexmo-notification-channel",
