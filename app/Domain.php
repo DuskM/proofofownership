@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Domain extends Model
 {
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User::class');
     }
 
 }

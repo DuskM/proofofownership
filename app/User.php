@@ -31,7 +31,7 @@ class User extends Authenticatable
     public function domain(){
 
 
-        return $this->hasMany('App\Domain');
+        return $this->hasMany('Domain::class');
 
 
     }

@@ -20,8 +20,8 @@ class UserDomainController extends Controller
 
     public function index()
     {
-        $domains = Domain::orderBy('created_at', 'desc')->paginate(10);
-        return view('users.domains.index')->with('domains', $domains);
+        $domains = Domain::paginate(10);
+        return view('users.domains.index', compact('domains','categories'));
     }
 
 }
