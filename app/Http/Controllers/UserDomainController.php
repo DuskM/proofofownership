@@ -51,5 +51,4 @@ class UserDomainController extends Controller
         return view('users.domains.create', compact('user', 'userId'));
     }
 
-
 }
