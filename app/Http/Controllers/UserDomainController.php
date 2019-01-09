@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserDomainController extends Controller
 {
@@ -25,8 +26,10 @@ class UserDomainController extends Controller
     }
     public function store(Request $request)
     {
+        $domains = Domain::paginate(10);
+        $userId = Auth::user()->id;
         Domain::create($request->all());
-        return "This Works";
+        return view('users.domains.index', compact('domains'));
     }
 
     public function show($id){
@@ -37,8 +40,13 @@ class UserDomainController extends Controller
 
     }
 
-    public function create(){
-        return view('users.domains.create');
+    public function create(Request $request){
+        $domain = new \App\Domain;
+        $domain->user_id = $request->request->get('user_id');
+        $domain->body = $request->request->get('body');
+        $user = Auth::user();
+        $userId = $user->id;
+        return view('users.domains.create', compact('user', 'userId'));
     }
 
 }
