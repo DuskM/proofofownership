@@ -11,7 +11,6 @@ use Keygen;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Keygen\Keygen;
 
 class UserDomainController extends Controller
 {
@@ -31,9 +30,13 @@ class UserDomainController extends Controller
 
     public function store(Request $request)
     {
-        $domains = Domain::paginate(10);
-        $userId = Auth::user()->id;
-        Domain::create($request->all());
+        if(Domain::where('urlname', '=', Input::get('urlname'))->exists()){
+            return "This domain name is already taken <br> Click <a href='/domain/create'>here</a>";
+        } else {
+            $domains = Domain::paginate(10);
+            $userId = Auth::user()->id;
+            Domain::create($request->all());
+        }
         return view('users.domains.index', compact('domains'));
     }
 
@@ -41,7 +44,8 @@ class UserDomainController extends Controller
 
             //
             $domain = Domain::find($id);
-            return view('users.domains.show', compact('domain'));
+            $key = Keygen::numeric(10)->generate();
+            return view('users.domains.show', compact('domain', 'key'));
 
     }
 
@@ -51,7 +55,6 @@ class UserDomainController extends Controller
         $domain->body = $request->request->get('body');
         $user = Auth::user();
         $userId = $user->id;
-        $key = Keygen::numeric(10)->generate();
-        return view('users.domains.create', compact('user', 'userId', 'key'));
+        return view('users.domains.create', compact('user', 'userId'));
     }
 }
