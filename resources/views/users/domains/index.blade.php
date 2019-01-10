@@ -12,7 +12,7 @@
             @if(count($domains) > 0)
                 @foreach($domains->where('user_id','=', Auth::user()->id) as $domain)
                         <tr>
-                            <td><a href="/domain/{{$domain->id}}">{{$domain->urlname}}</a></td>
+                            <td><a href="/domain/{{$domain->id}}">{{$domain->name}}</a></td>
                         </tr>
                 @endforeach
                     {{$domains->links()}}

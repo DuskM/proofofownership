@@ -4,13 +4,13 @@
     <a href="/domain" class="bn btn">Go back</a>
     @if(!Auth::guest())
         @if(Auth::user()->id == $domain->user_id)
-            <h1>{{$domain->urlname}}</h1>
+            <h1>{{$domain->name}}</h1>
             <br>
             <br>
             <div>
-            {!!  $domain->urlname!!}
+            {!!  $domain->name!!}
                 <br>
-            {!!  $domain->keygen!!}
+            {!!  $domain->verification!!}
             </div>
             <hr>
         <small>Written on {{$domain->created_at}}</small>
