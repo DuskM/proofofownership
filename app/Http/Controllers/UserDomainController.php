@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
+
 class UserDomainController extends Controller
 {
 
@@ -34,10 +35,10 @@ class UserDomainController extends Controller
             return "This domain name is already taken <br> Click <a href='/domain/create'>here</a>";
         } else {
             $domains = Domain::paginate(10);
-            $userId = Auth::user()->id;
             Domain::create($request->all());
         }
         return view('users.domains.index', compact('domains'));
+            $userId = Auth::user()->id;
     }
 
     public function show($id){
