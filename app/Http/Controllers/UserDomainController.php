@@ -26,7 +26,9 @@ class UserDomainController extends Controller
     public function index()
     {
         $domains = Domain::paginate(10);
-        return view('users.domains.index', compact('domains','categories'));
+        $user = Auth::user();
+        $userId = $user->id;
+        return view('users.domains.index', compact('domains','userId'));
     }
 
     public function store(Request $request)
