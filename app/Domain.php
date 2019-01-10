@@ -8,9 +8,9 @@ use App\User;
 class Domain extends Model
 {
     protected $fillable = [
-        'urlname',
+        'name',
         'user_id',
-        'keygen',
+        'verification_key',
     ];
     public function user(){
         return $this->belongsTo('App\User::class');

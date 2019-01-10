@@ -26,7 +26,7 @@ class CreateGeneratorsTable extends Migration
     public function down()
     {
         Schema::table('domains', function($table) {
-            $table->dropColumn('keygen');
+            $table->dropColumn('verfication_key');
         });
     }
 }
