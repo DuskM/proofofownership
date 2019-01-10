@@ -2,17 +2,24 @@
 
 @section('content')
     <a href="/domain" class="bn btn">Go back</a>
-    <h1>{{$domain->urlname}}</h1>
-    <br>
-    <br>
-    <div>
-        {!!  $domain->urlname!!}
-        {!!  $domain->keygen!!}
-    </div>
-    <hr>
-    <small>Written on {{$domain->created_at}}</small>
-    <hr>
-    <a href="/domain/{{$domain->id}}/verify" class="bn btn">Verify domain</a>
+    @if(!Auth::guest())
+        @if(Auth::user()->id == $domain->user_id)
+            <h1>{{$domain->urlname}}</h1>
+            <br>
+            <br>
+            <div>
+            {!!  $domain->urlname!!}
+                <br>
+            {!!  $domain->keygen!!}
+            </div>
+            <hr>
+        <small>Written on {{$domain->created_at}}</small>
+        <hr>
+        @endif
+    @endif
+
+
+
 
     {{--<script>--}}
         {{--jQuery(document).ready(function($){--}}

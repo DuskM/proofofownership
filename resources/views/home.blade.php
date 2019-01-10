@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                        <a href="/domain" class="bn btn">Go to domains</a>
                 </div>
             </div>
         </div>

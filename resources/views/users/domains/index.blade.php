@@ -10,7 +10,7 @@
             </thead>
             <tbody>
             @if(count($domains) > 0)
-                @foreach($domains as $domain)
+                @foreach($domains->where('user_id','=', Auth::user()->id) as $domain)
                         <tr>
                             <td><a href="/domain/{{$domain->id}}">{{$domain->urlname}}</a></td>
                         </tr>
