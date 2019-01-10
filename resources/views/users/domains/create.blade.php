@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <a href="/domain" class="bn btn">Go back</a>
 
     {{--Add new domains--}}
     <div class="col-sm6">
