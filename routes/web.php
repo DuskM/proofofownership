@@ -26,3 +26,4 @@ Route::get('domain/{{$domain->id}}/verify', 'UserDomainController@verify');
 
 Route::post('/domain/{id}/edit', 'UserDomainController@edit');
 Route::resource('/domain', 'UserDomainController');
+
