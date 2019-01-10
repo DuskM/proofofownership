@@ -14,6 +14,10 @@
             {!! Form::hidden('user_id', $user->id) !!}
         </div>
         <div class="form-group">
+            {{$key = Keygen::numeric(10)->generate()}}
+            {!! Form::hidden('keygen', $key) !!}
+        </div>
+        <div class="form-group">
             {!! Form::submit('Add Domain', ['class'=>'btn btn-primary']) !!}
         </div>
         {!! Form::close() !!}
