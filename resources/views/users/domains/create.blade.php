@@ -14,7 +14,7 @@
             {!! Form::hidden('user_id', $user->id) !!}
         </div>
         <div class="form-group">
-            {{$key = Keygen::numeric(10)->generate()}}
+            {{--{{$key = Keygen::numeric(10)->generate()}}--}}
             {!! Form::hidden('keygen', $key) !!}
         </div>
         <div class="form-group">

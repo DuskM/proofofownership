@@ -7,9 +7,9 @@
     <br>
     <div>
         {!!  $domain->urlname!!}
+        {!!  $domain->keygen!!}
     </div>
     <hr>
-    <h3>{!! $key !!}</h3>
     <small>Written on {{$domain->created_at}}</small>
     <hr>
     <a href="/domain/{{$domain->id}}/verify" class="bn btn">Verify domain</a>

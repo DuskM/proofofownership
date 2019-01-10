@@ -34,7 +34,6 @@ class UserDomainController extends Controller
         if(Domain::where('urlname', '=', Input::get('urlname'))->exists()){
             return "This domain name is already taken <br> Click <a href='/domain/create'>here</a>";
         } else {
-            $key = Keygen::numeric(10)->generate();
             Domain::create($request->all());
         }
         return redirect('/domain');
@@ -55,6 +54,7 @@ class UserDomainController extends Controller
         $domain->body = $request->request->get('body');
         $user = Auth::user();
         $userId = $user->id;
-        return view('users.domains.create', compact('user', 'userId'));
+        $key = Keygen::numeric(10)->generate();
+        return view('users.domains.create', compact('user', 'userId', 'key'));
     }
 }
