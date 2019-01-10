@@ -13,29 +13,15 @@
             {!!  $domain->verification_key!!}
             </div>
             <hr>
-        <small>Written on {{$domain->created_at}}</small>
+        <small>Added on {{$domain->created_at}}</small><br>
+            @if($domain->verified == '1')
+                <small>Domain verified</small><br>
+                <small>Verified at {{$domain->updated_at}}</small>
+                @endif
         <hr>
         @endif
     @endif
 
 
 
-
-    {{--<script>--}}
-        {{--jQuery(document).ready(function($){--}}
-
-            {{--$("#random").click(function(){--}}
-                {{--var number = 1 + Math.floor(Math.random() * 6);--}}
-                {{--$("#number").text(number);--}}
-
-            {{--});--}}
-
-        {{--});--}}
-
-
-    {{--</script>--}}
-
-
-    {{--<button class="button" type="button" name="buttonpassvalue" id="random" >Get Random Number</button>--}}
-    {{--<div id="number"></div>--}}
 @endsection

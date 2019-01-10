@@ -1,3 +1,7 @@
+## Required composer objects
+composer require "webpatser/laravel-uuid:^3.0"
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
