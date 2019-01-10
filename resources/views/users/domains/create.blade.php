@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             {{--{{$key = Keygen::numeric(10)->generate()}}--}}
-            {!! Form::hidden('verification', $key) !!}
+            {!! Form::hidden('verification_key', $key) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('Add Domain', ['class'=>'btn btn-primary']) !!}

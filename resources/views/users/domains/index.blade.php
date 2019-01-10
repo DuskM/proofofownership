@@ -6,7 +6,7 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Domain</th>
+                <th>Name Of Domain</th>
             </thead>
             <tbody>
             @if(count($domains) > 0)
@@ -23,6 +23,6 @@
         </table>
     </div>
 
-    <a href="/domain/create" class="btn btn-default">Add new domain</a>
+    <a href="/domain/create" class="btn btn-default">Add a new domain</a>
 
 @stop
