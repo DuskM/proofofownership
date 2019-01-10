@@ -20,11 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/domain', 'UserDomainController@index');
-Route::post('/domain/create', 'UserDomainController@store');
-<<<<<<< Updated upstream
+
 Route::resource('/domain', 'UserDomainController');
-Route::get('domain/{{$domain->id}}/verify', 'UserDomainController@verify');
-=======
+
 Route::post('/domain/{id}/edit', 'UserDomainController@edit');
-Route::resource('/domain', 'UserDomainController');
->>>>>>> Stashed changes
+
