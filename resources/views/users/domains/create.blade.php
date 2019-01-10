@@ -4,8 +4,7 @@
 
     {{--Add new domains--}}
     <div class="col-sm6">
-
-        {!! Form::open(['method'=>'POST', 'action'=>['UserDomainController@store', $user->id]]) !!}
+        {!! Form::open(['method'=>'POST', 'action'=>'UserDomainController@store']) !!}
         @csrf
         <div class="form-group">
             {!! Form::label('urlname', 'Domain:') !!}
@@ -19,7 +18,6 @@
             {!! Form::submit('Add Domain', ['class'=>'btn btn-primary']) !!}
         </div>
         {!! Form::close() !!}
-
     </div>
 
 @stop

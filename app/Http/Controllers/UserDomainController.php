@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Domain;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Keygen;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
@@ -27,9 +30,13 @@ class UserDomainController extends Controller
 
     public function store(Request $request)
     {
-        $domains = Domain::paginate(10);
-        $userId = Auth::user()->id;
-        Domain::create($request->all());
+        if(Domain::where('urlname', '=', Input::get('urlname'))->exists()){
+            return "This domain name is already taken <br> Click <a href='/domain/create'>here</a> to try again";
+        } else {
+            $domains = Domain::paginate(10);
+            $userId = Auth::user()->id;
+            Domain::create($request->all());
+        }
         return view('users.domains.index', compact('domains'));
     }
 
@@ -50,5 +57,4 @@ class UserDomainController extends Controller
         $userId = $user->id;
         return view('users.domains.create', compact('user', 'userId'));
     }
-
 }
