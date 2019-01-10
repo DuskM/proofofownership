@@ -14,7 +14,7 @@ class CreateGeneratorsTable extends Migration
     public function up()
     {
         Schema::table('domains', function($table) {
-            $table->string('keygen');
+            $table->string('verification_key');
         });
     }
 

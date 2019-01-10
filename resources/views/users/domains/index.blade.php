@@ -14,22 +14,11 @@
                         <tr>
                             <td><a href="/domain/{{$domain->id}}">{{$domain->urlname}}</a></td>
                         </tr>
-                        @endif
-                    @endforeach
+                @endforeach
                     {{$domains->links()}}
                 @else
                     <p>No domains found</p>
                 @endif
-            {{--@if(count($domains) > 0)--}}
-                {{--@foreach($domains as $domain)--}}
-                        {{--<tr>--}}
-                            {{--<td><a href="/domain/{{$domain->id}}">{{$domain->urlname}}</a></td>--}}
-                        {{--</tr>--}}
-                {{--@endforeach--}}
-                {{--{{$domains->links()}}--}}
-            {{--@else--}}
-                {{--<p>No domains found</p>--}}
-            {{--@endif--}}
             </tbody>
         </table>
     </div>
