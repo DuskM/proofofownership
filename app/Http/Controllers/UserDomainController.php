@@ -11,6 +11,7 @@ use Keygen;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Webpatser\Uuid\Uuid;
 
 
 class UserDomainController extends Controller
@@ -56,7 +57,20 @@ class UserDomainController extends Controller
         $domain->body = $request->request->get('body');
         $user = Auth::user();
         $userId = $user->id;
-        $key = Keygen::numeric(10)->generate();
-        return view('users.domains.create', compact('user', 'userId', 'key'));
+        $verification_key = Uuid::generate()->string;
+        $uuid = Uuid::generate()->string;
+        return view('users.domains.create', compact('user', 'userId', 'verification_key', 'uuid'));
+    }
+
+
+
+
+
+
+
+
+//    TEST OBJECTS
+    public function uuid(){
+        return view('users.domains.uuidtest');
     }
 }

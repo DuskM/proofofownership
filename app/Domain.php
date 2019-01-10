@@ -11,6 +11,7 @@ class Domain extends Model
         'name',
         'user_id',
         'verification_key',
+        'uuid',
     ];
     public function user(){
         return $this->belongsTo('App\User::class');
