@@ -11,7 +11,7 @@ use Keygen;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Keygen\Keygen;
+
 
 class UserDomainController extends Controller
 {
@@ -31,10 +31,9 @@ class UserDomainController extends Controller
 
     public function store(Request $request)
     {
-        $domains = Domain::paginate(10);
-        $userId = Auth::user()->id;
+
         Domain::create($request->all());
-        return view('users.domains.index', compact('domains'));
+        return redirect('/domain');
     }
 
     public function show($id){
