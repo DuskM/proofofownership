@@ -3,7 +3,7 @@
 @section('content')
     <a href="/domain" class="bn btn">Go back</a>
     @if(!Auth::guest())
-        @if(Auth::user()->id == $domain['user_id'])
+        @if(Auth::user()->id == $domain->id)
             <h1>{{$domain->name}}</h1>
             <br>
             <div>

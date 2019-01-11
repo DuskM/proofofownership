@@ -45,10 +45,10 @@ class UserDomainController extends Controller
             $userId = Auth::user()->id;
     }
 
-    public function show($id){
+    public function show(Domain $domain){
 
             //
-            $domain = Domain::find($id);
+//            $domain = Domain::find($id);
             return view('users.domains.show', compact('domain'));
 
     }
@@ -72,7 +72,7 @@ class UserDomainController extends Controller
 
 
 //    TEST OBJECTS
-    public function uuid(){
-        return view('users.domains.uuidtest');
-    }
+//    public function uuid(){
+//        return view('users.domains.uuidtest');
+//    }
 }

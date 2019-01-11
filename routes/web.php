@@ -29,8 +29,7 @@ Route::resource('/domain', 'UserDomainController');
 
 
 //TEST OBJECTS
-Route::get('/uuidtest', 'UserDomainController@uuid');
-Route::get('/domain/{uuid}', 'UserDomainController@show');
+Route::get('/{domain}', 'UserDomainController@show')->name('users.domains.show');
 
 
 
