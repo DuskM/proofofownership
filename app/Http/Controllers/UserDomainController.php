@@ -74,6 +74,14 @@ class UserDomainController extends Controller
         return redirect('/domain')->with('succes', 'Domain removed');
     }
 
+    public function edit(Domain $domain){
+
+        //
+//            $domain = Domain::find($id);
+        return view('users.domains.edit', compact('domain'));
+
+    }
+
 
 
 
