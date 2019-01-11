@@ -45,10 +45,10 @@ class UserDomainController extends Controller
             $userId = Auth::user()->id;
     }
 
-    public function show($id){
+    public function show(Domain $domain){
 
             //
-            $domain = Domain::find($id);
+//            $domain = Domain::find($id);
             return view('users.domains.show', compact('domain'));
 
     }
@@ -64,15 +64,30 @@ class UserDomainController extends Controller
         return view('users.domains.create', compact('user', 'userId', 'verification_key', 'uuid'));
     }
 
-
-
-
-
-
-
-
-//    TEST OBJECTS
-    public function uuid(){
-        return view('users.domains.uuidtest');
+    public function destroy($id)
+    {
+        $domain = Domain::find($id);
+        if(auth()->user()->id !==$domain->user_id){
+            return redirect('/domain')->with('error', 'Unauthorized page');
+        }
+        $domain->delete();
+        return redirect('/domain')->with('succes', 'Domain removed');
     }
+
+    public function edit(Domain $domain){
+
+        //
+//            $domain = Domain::find($id);
+        return view('users.domains.edit', compact('domain'));
+
+    }
+
+
+
+
+
+
+
+
+
 }

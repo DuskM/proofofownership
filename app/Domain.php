@@ -18,13 +18,13 @@ class Domain extends Model
         return $this->belongsTo('App\User::class');
     }
 
-        public static function boot(){
-        parent::boot();
-        self::creating(function ($model){
-            $model->uuid = (string) Uuid::generate();
-        });
-
-    }
+//        public static function boot(){
+//        parent::boot();
+//        self::creating(function ($model){
+//            $model->uuid = (string) Uuid::generate();
+//        });
+//
+//    }
 
     public function getRouteKeyName(){
         return 'uuid';
