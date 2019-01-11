@@ -10,22 +10,29 @@
         {!! Form::model($domain, ['method'=>'PATCH', 'action'=>['UserDomainController@update', $domain->id]]) !!}
         @csrf
         <div class="form-group">
-            {!! Form::label('domain', 'New name:') !!}
-            {!! Form::text('domain', null, ['class'=>'form-control']) !!}
-        {{--</div>--}}
-        {{--<div class="form-group">--}}
-            {{--{!! Form::submit('Update Domain', ['class'=>'btn btn-primary col-sm-6']) !!}--}}
-        {{--</div>--}}
+            {!! Form::label('name', 'New name:') !!}
+            {!! Form::text('name', null, ['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::hidden('verified', '0') !!}
+        </div>
+        <div class="form-group">
+            {!! Form::submit('Update Domain', ['class'=>'btn btn-primary col-sm-6']) !!}
+        </div>
+
         {!! Form::close() !!}
-            <br>
+
+
+
+
+
+
+        <br>
             <p>Or you can just delete the domain</p>
         {!! Form::open(['method'=>'DELETE', 'action'=>['UserDomainController@destroy', $domain->id]]) !!}
         <div class="form-group">
             {!! Form::submit('Delete Domain', ['class'=>'btn btn-danger col-sm-6']) !!}
         </div>
-            <div class="form-group">
-                {!! Form::hidden('verified', '0') !!}
-            </div>
         {!! Form::close() !!}
     </div>
     </div>

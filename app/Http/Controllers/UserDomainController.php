@@ -82,6 +82,23 @@ class UserDomainController extends Controller
 
     }
 
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'verified' => 'required'
+        ]);
+
+
+
+        $domain = Domain::find($id);
+        $domain->name = $request->input('name');
+        $domain->verified = $request->input('verified');
+        $domain->save();
+
+        return redirect('/domain')->with('succes', 'Domain updated, please verify it again.');
+    }
+
 
 
 
