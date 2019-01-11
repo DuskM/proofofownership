@@ -64,6 +64,15 @@ class UserDomainController extends Controller
         return view('users.domains.create', compact('user', 'userId', 'verification_key', 'uuid'));
     }
 
+    public function destroy($id)
+    {
+        $domain = Domain::find($id);
+        if(auth()->user()->id !==$domain->user_id){
+            return redirect('/domain')->with('error', 'Unauthorized page');
+        }
+        $domain->delete();
+        return redirect('/domain')->with('succes', 'Domain removed');
+    }
 
 
 
@@ -71,8 +80,6 @@ class UserDomainController extends Controller
 
 
 
-//    TEST OBJECTS
-//    public function uuid(){
-//        return view('users.domains.uuidtest');
-//    }
+
+
 }

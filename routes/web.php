@@ -29,7 +29,6 @@ Route::resource('/domain', 'UserDomainController');
 
 
 //TEST OBJECTS
-Route::get('/{domain}', 'UserDomainController@show')->name('users.domains.show');
 
 
 
