@@ -14,7 +14,7 @@ class AddVerifiedToDomains extends Migration
     public function up()
     {
         Schema::table('domains', function (Blueprint $table) {
-            $table->integer('verified')->default(0);
+            $table->uuid('verified')->default(0);
         });
     }
 

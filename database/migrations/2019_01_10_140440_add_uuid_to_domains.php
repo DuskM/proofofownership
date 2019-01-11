@@ -14,7 +14,7 @@ class AddUuidToDomains extends Migration
     public function up()
     {
         Schema::table('domains', function (Blueprint $table) {
-            $table->string('uuid');
+            $table->uuid('uuid');
         });
     }
 

@@ -24,6 +24,8 @@ class UserDomainController extends Controller
 
 
 
+
+
     public function index()
     {
         $domains = Domain::paginate(10);
