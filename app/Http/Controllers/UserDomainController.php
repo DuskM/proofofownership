@@ -37,7 +37,7 @@ class UserDomainController extends Controller
     public function store(Request $request)
     {
         if(Domain::where('name', '=', Input::get('name'))->exists()){
-            return "This domain name is already taken <br> Click <a href='/domain/create'>here</a>";
+            return view('users.domains.error');
         } else {
             Domain::create($request->all());
         }
