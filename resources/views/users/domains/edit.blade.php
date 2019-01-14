@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <a href="/domain/{{$domain->uuid}}" class="bn btn">Go back</a>
+    @if(!Auth::guest())
+        @if(Auth::user()->id == $domain->user_id)
     <h1>Edit Domain name</h1>
     <p>This will un-verify your domain name if it was already verified</p>
     <p><b>Current domain name {{$domain->name}}</b></p>
 
+    {{--Update function--}}
     <div class="col-sm6">
         {!! Form::model($domain, ['method'=>'PATCH', 'action'=>['UserDomainController@update', $domain->id]]) !!}
         @csrf
@@ -26,7 +29,7 @@
 
 
 
-
+{{--Delete function--}}
         <br>
             <p>Or you can just delete the domain</p>
         {!! Form::open(['method'=>'DELETE', 'action'=>['UserDomainController@destroy', $domain->id]]) !!}
@@ -38,4 +41,6 @@
     </div>
     <div class="col-sm-6">
     </div>
+    @endif
+    @endif
 @stop

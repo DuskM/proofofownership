@@ -45,15 +45,13 @@ class UserDomainController extends Controller
             $userId = Auth::user()->id;
     }
 
-    public function show(Domain $domain){
-
-            //
-//            $domain = Domain::find($id);
+    public function show(Domain $domain)
+    {
             return view('users.domains.show', compact('domain'));
-
     }
 
-    public function create(Request $request){
+    public function create(Request $request)
+    {
         $domain = new \App\Domain;
         $domain->user_id = $request->request->get('user_id');
         $domain->body = $request->request->get('body');
@@ -74,10 +72,8 @@ class UserDomainController extends Controller
         return redirect('/domain')->with('succes', 'Domain removed');
     }
 
-    public function edit(Domain $domain){
-
-        //
-//            $domain = Domain::find($id);
+    public function edit(Domain $domain)
+    {
         return view('users.domains.edit', compact('domain'));
 
     }
@@ -88,8 +84,6 @@ class UserDomainController extends Controller
             'name' => 'required',
             'verified' => 'required'
         ]);
-
-
 
         $domain = Domain::find($id);
         $domain->name = $request->input('name');
