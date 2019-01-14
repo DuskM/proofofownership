@@ -32,7 +32,6 @@
 {{--Delete function--}}
         <br>
             <p>Or you can just delete the domain</p>
-        {!! Form::open(['method'=>'DELETE', 'action'=>['UserDomainController@destroy', $domain->id]]) !!}
         <div class="form-group">
             {!! Form::submit('Delete Domain', ['class'=>'btn btn-danger col-sm-6']) !!}
         </div>
