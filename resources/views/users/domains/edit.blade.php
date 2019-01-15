@@ -25,11 +25,7 @@
 
         {!! Form::close() !!}
 
-
-
-
-
-{{--Delete function--}}
+    {{--Delete function--}}
         <br>
             <p>Or you can just delete the domain</p>
         <div class="form-group">

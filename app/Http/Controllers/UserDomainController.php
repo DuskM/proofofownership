@@ -84,11 +84,15 @@ class UserDomainController extends Controller
             'name' => 'required',
             'verified' => 'required'
         ]);
-
-        $domain = Domain::find($id);
-        $domain->name = $request->input('name');
-        $domain->verified = $request->input('verified');
-        $domain->save();
+        if(Domain::where('name', '=', Input::get('name'))->exists()){
+            $domain = Domain::find($id);
+            return view('users.domains.edit_error', compact('domain'));
+        } else {
+            $domain = Domain::find($id);
+            $domain->name = $request->input('name');
+            $domain->verified = $request->input('verified');
+            $domain->save();
+        }
 
         return redirect('/domain')->with('succes', 'Domain updated, please verify it again.');
     }
