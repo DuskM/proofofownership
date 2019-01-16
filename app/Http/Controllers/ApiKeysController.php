@@ -55,14 +55,14 @@ class ApiKeysController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'lable' => 'required',
+            'label' => 'required',
         ]);
-        if(Apikeys::where('lable', '=', Input::get('lable'))->exists()){
+        if(Apikeys::where('label', '=', Input::get('label'))->exists()){
             $apikey = Apikeys::find($id);
             return view('users.domains.edit_error', compact('apikey'));
         } else {
             $apikey = Apikeys::find($id);
-            $apikey->name = $request->input('lable');
+            $apikey->name = $request->input('label');
             $apikey->save();
         }
 

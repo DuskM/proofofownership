@@ -16,7 +16,7 @@ class CreateApikeysTable extends Migration
         Schema::create('apikeys', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('lable');
+            $table->string('label');
             $table->uuid('uuid');
             $table->timestamps();
         });

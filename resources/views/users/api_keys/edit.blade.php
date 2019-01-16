@@ -5,15 +5,15 @@
     @if(!Auth::guest())
         @if(Auth::user()->id == $apikey->user_id)
             <h1>Edit Label</h1>
-            <p><b>Current Label name {{$apikey->lable}}</b></p>
+            <p><b>Current Label name {{$apikey->label}}</b></p>
 
             {{--Update function--}}
             <div class="col-sm6">
                 {!! Form::model($apikey, ['method'=>'PATCH', 'action'=>['ApiKeysController@update', $apikey->id]]) !!}
                 @csrf
                 <div class="form-group">
-                    {!! Form::label('lable', 'New Label:') !!}
-                    {!! Form::text('lable', null, ['class'=>'form-control']) !!}
+                    {!! Form::label('label', 'New Label:') !!}
+                    {!! Form::text('label', null, ['class'=>'form-control']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::submit('Update Label', ['class'=>'btn btn-primary col-sm-6']) !!}

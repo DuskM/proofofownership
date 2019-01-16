@@ -18,7 +18,7 @@ class Apikeys extends Model
 
 
     protected $fillable = [
-        'lable',
+        'label',
         'user_id',
         'uuid',
     ];
