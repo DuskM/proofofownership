@@ -16,6 +16,13 @@ use Webpatser\Uuid\Uuid;
 class ApiKeysController extends Controller
 {
     //
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index(){
         $apikeys = Apikeys::paginate(10);
         $user = Auth::user();
@@ -42,9 +49,9 @@ class ApiKeysController extends Controller
         $userId = Auth::user()->id;
     }
 
-    public function show(Apikeys $apikey)
+    public function show(Apikeys $apikeys)
     {
-        return view('users.api_keys.show', compact('apikey'));
+        return view('users.api_keys.show', compact('apikeys'));
     }
 
     public function edit(Apikeys $apikey)
@@ -66,7 +73,7 @@ class ApiKeysController extends Controller
             $apikey->save();
         }
 
-        return redirect('/api')->with('succes', 'Label is updated');
+        return redirect('/api')->with('success', 'Label is updated');
     }
 
     public function destroy($id)
@@ -76,7 +83,7 @@ class ApiKeysController extends Controller
             return redirect('/api')->with('error', 'Unauthorized page');
         }
         $apikey->delete();
-        return redirect('/api')->with('succes', 'API Key removed');
+        return redirect('/api')->with('success', 'API Key removed');
     }
 
 }
