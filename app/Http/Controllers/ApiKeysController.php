@@ -32,7 +32,6 @@ class ApiKeysController extends Controller
         $verification_key = Uuid::generate()->string;
         $uuid = Uuid::generate()->string;
         return view('users.api_keys.create', compact('user', 'userId', 'verification_key', 'uuid', 'apikey'));
-
     }
 
     public function store(Request $request){
@@ -43,6 +42,43 @@ class ApiKeysController extends Controller
         }
         return redirect('/api');
         $userId = Auth::user()->id;
-
     }
+
+    public function show(Apikeys $apikey)
+    {
+        return view('users.api_keys.show', compact('apikey'));
+    }
+
+    public function edit(Apikeys $apikey)
+    {
+        return view('users.api_keys.edit', compact('apikey'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'lable' => 'required',
+        ]);
+        if(Apikeys::where('lable', '=', Input::get('lable'))->exists()){
+            $apikey = Apikeys::find($id);
+            return view('users.domains.edit_error', compact('apikey'));
+        } else {
+            $apikey = Apikeys::find($id);
+            $apikey->name = $request->input('lable');
+            $apikey->save();
+        }
+
+        return redirect('/api')->with('succes', 'Label is updated');
+    }
+
+    public function destroy($id)
+    {
+        $apikey = Apikeys::find($id);
+        if(auth()->user()->id !==$apikey->user_id){
+            return redirect('/api')->with('error', 'Unauthorized page');
+        }
+        $apikey->delete();
+        return redirect('/api')->with('succes', 'API Key removed');
+    }
+
 }

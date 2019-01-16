@@ -71,7 +71,6 @@ class UserDomainController extends Controller
     public function edit(Domain $domain)
     {
         return view('users.domains.edit', compact('domain'));
-
     }
 
     public function update(Request $request, $id)
