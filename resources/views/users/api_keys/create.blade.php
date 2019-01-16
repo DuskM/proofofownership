@@ -10,8 +10,8 @@
         {!! Form::open(['method'=>'POST', 'action'=>'ApiKeysController@store']) !!}
         @csrf
         <div class="form-group">
-            {!! Form::label('lable', 'Label:') !!}
-            {!! Form::text('lable', null, ['class'=>'form-control']) !!}
+            {!! Form::label('label', 'Label:') !!}
+            {!! Form::text('label', null, ['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::hidden('user_id', $user->id) !!}

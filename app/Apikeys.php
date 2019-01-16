@@ -1,8 +1,9 @@
 <?php
 
 namespace App;
-use Webpatser\Uuid\Uuid;
 
+use Webpatser\Uuid\Uuid;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Webpatser\Uuid\Uuid;
 
@@ -19,8 +20,12 @@ class Apikeys extends Model
 
 
     protected $fillable = [
-        'lable',
+        'label',
         'user_id',
         'uuid',
     ];
+
+    public function user(){
+        return $this->belongsTo('App\User::class');
+    }
 }
