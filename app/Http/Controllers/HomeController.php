@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function prot_api()
+    {
+        $data = [
+            'name' => 'Henk',
+            'email' => 'henk@live.nl'
+        ];
+
+        return response()->json($data);
+    }
 }
