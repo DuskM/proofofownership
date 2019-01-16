@@ -49,9 +49,9 @@ class ApiKeysController extends Controller
         $userId = Auth::user()->id;
     }
 
-    public function show(Apikeys $apikeys)
+    public function show(Apikeys $apikey)
     {
-        return view('users.api_keys.show', compact('apikeys'));
+        return view('users.api_keys.show', compact('apikey'));
     }
 
     public function edit(Apikeys $apikey)
