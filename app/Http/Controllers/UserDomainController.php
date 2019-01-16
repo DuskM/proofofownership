@@ -22,10 +22,6 @@ class UserDomainController extends Controller
         $this->middleware('auth');
     }
 
-
-
-
-
     public function index()
     {
         $domains = Domain::paginate(10);
