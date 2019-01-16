@@ -2,8 +2,8 @@
 
 @section('content')
     <a href="/api" class="bn btn">Go back</a>
-    @if(!Auth::guest())
-        @if(Auth::user()->id == $apikey->user_id)
+    {{--@if(!Auth::guest())--}}
+        {{--@if(Auth::user()->id == $apikey->user_id)--}}
             <h1>{{$apikey->label}}</h1>
             <br>
             <div>
@@ -18,8 +18,8 @@
             {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
             {!! !Form::close() !!}
             <hr>
-        @endif
-    @endif
+        {{--@endif--}}
+    {{--@endif--}}
 
 
 

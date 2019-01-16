@@ -35,4 +35,12 @@ class User extends Authenticatable
 
 
     }
+
+    public function apikeys(){
+
+
+        return $this->hasMany('Apikeys::class');
+
+
+    }
 }

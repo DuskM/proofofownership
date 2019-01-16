@@ -1,8 +1,9 @@
 <?php
 
 namespace App;
-use Webpatser\Uuid\Uuid;
 
+use Webpatser\Uuid\Uuid;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -22,4 +23,8 @@ class Apikeys extends Model
         'user_id',
         'uuid',
     ];
+
+    public function user(){
+        return $this->belongsTo('App\User::class');
+    }
 }
