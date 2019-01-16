@@ -26,7 +26,6 @@ class ApiKeysController extends Controller
     public function create(Request $request){
         $apikey = new \App\Apikeys;
         $apikey->user_id = $request->request->get('user_id');
-        $apikey->body = $request->request->get('body');
         $user = Auth::user();
         $userId = $user->id;
         return view('users.api_keys.create', compact('user', 'userId', 'uuid', 'apikey'));

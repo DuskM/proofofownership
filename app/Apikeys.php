@@ -4,6 +4,7 @@ namespace App;
 use Webpatser\Uuid\Uuid;
 
 use Illuminate\Database\Eloquent\Model;
+use Webpatser\Uuid\Uuid;
 
 
 class Apikeys extends Model

@@ -14,7 +14,7 @@
             @if(count($apikeys) > 0)
                 @foreach($apikeys->where('user_id','=', Auth::user()->id) as $apikey)
                     <tr>
-                        <td><a href="/api/{{$apikey->user_id}}">{{$apikey->lable}}</a></td>
+                        <td><a href="/api/{{$apikey->id}}">{{$apikey->lable}}</a></td>
                     </tr>
                 @endforeach
                 {{$apikeys->links()}}
