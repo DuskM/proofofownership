@@ -22,10 +22,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/domain', 'UserDomainController');
 Route::get('/domain', 'UserDomainController@index');
 Route::post('/domain/create', 'UserDomainController@store');
+
 Route::resource('/api', 'ApiKeysController');
 Route::get('/api', 'ApiKeysController@index');
-
-
+Route::post('/api/create', 'ApiKeysController@store');
 
 
 
