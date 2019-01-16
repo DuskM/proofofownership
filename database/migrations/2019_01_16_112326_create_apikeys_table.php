@@ -17,7 +17,6 @@ class CreateApikeysTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('lable');
-            $table->uuid('verification_key');
             $table->uuid('uuid');
             $table->timestamps();
         });

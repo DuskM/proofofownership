@@ -53,9 +53,8 @@ class UserDomainController extends Controller
         $domain->body = $request->request->get('body');
         $user = Auth::user();
         $userId = $user->id;
-        $verification_key = Uuid::generate()->string;
         $uuid = Uuid::generate()->string;
-        return view('users.domains.create', compact('user', 'userId', 'verification_key', 'uuid'));
+        return view('users.domains.create', compact('user', 'userId', 'uuid'));
     }
 
     public function destroy($id)

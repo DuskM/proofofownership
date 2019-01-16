@@ -29,13 +29,11 @@ class ApiKeysController extends Controller
         $apikey->body = $request->request->get('body');
         $user = Auth::user();
         $userId = $user->id;
-        $verification_key = Uuid::generate()->string;
-        $uuid = Uuid::generate()->string;
-        return view('users.api_keys.create', compact('user', 'userId', 'verification_key', 'uuid', 'apikey'));
+        return view('users.api_keys.create', compact('user', 'userId', 'uuid', 'apikey'));
     }
 
     public function store(Request $request){
-        if(ApiKeys::where('verification_key', '=', Input::get('verification_key'))->exists()){
+        if(ApiKeys::where('uuid', '=', Input::get('uuid'))->exists()){
             return view('users.api_keys.error');
         } else {
             Apikeys::create($request->all());
