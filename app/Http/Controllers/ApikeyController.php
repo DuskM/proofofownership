@@ -13,7 +13,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Webpatser\Uuid\Uuid;
 
-class ApiKeyController extends Controller
+class ApikeyController extends Controller
 {
     //
 
@@ -49,8 +49,9 @@ class ApiKeyController extends Controller
         $userId = Auth::user()->id;
     }
 
-    public function show(Apikeys $apikey)
+    public function show($id)
     {
+        $apikey = Apikeys::findOrFail($id);
         return view('users.api_keys.show', compact('apikey'));
     }
 

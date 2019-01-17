@@ -13,7 +13,7 @@
             <hr>
             <small>Added on {{$apikey->created_at}}</small><br>
             <a href="/domain/{{$apikey->id}}/edit" class="'tn btn-default">Edit</a>
-            {!! Form::open(['action' => ['ApiKeyController@destroy', $apikey->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+            {!! Form::open(['action' => ['ApikeyController@destroy', $apikey->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
             {{Form::hidden('_method', 'DELETE')}}
             {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
             {!! !Form::close() !!}

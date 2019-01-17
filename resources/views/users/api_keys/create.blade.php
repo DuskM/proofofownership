@@ -7,7 +7,7 @@
 
     {{--Add new domains--}}
     <div class="col-sm6">
-        {!! Form::open(['method'=>'POST', 'action'=>'ApiKeyController@store']) !!}
+        {!! Form::open(['method'=>'POST', 'action'=>'ApikeyController@store']) !!}
         @csrf
         <div class="form-group">
             {!! Form::label('label', 'Label:') !!}
