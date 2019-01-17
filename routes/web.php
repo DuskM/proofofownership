@@ -23,11 +23,8 @@ Route::resource('/domain', 'UserDomainController');
 Route::get('/domain', 'UserDomainController@index');
 Route::post('/domain/create', 'UserDomainController@store');
 
-Route::resource('/api', 'ApiKeysController');
-Route::get('/api', 'ApiKeysController@index');
-Route::post('/api/create', 'ApiKeysController@store');
-
-
+Route::resource('/api', 'ApikeyController');
+Route::get('/api/{id}', 'ApikeyControll@show');
 
 //TEST OBJECTS
 

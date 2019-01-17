@@ -88,7 +88,7 @@ class UserDomainController extends Controller
             $domain->save();
         }
 
-        return redirect('/domain')->with('succes', 'Domain updated, please verify it again.');
+        return redirect('/domain')->with('success', 'Domain updated, please verify it again.');
     }
 
 
