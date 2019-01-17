@@ -22,7 +22,6 @@
         <div class="form-group">
             {!! Form::submit('Update Domain', ['class'=>'btn btn-primary col-sm-6']) !!}
         </div>
-
         {!! Form::close() !!}
 
     {{--Delete function--}}

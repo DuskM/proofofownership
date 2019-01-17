@@ -54,8 +54,9 @@ class ApikeyController extends Controller
         return view('users.api_keys.show', compact('apikey'));
     }
 
-    public function edit(Apikeys $apikey)
+    public function edit($id)
     {
+        $apikey = Apikeys::findOrFail($id);
         return view('users.api_keys.edit', compact('apikey'));
     }
 
@@ -69,7 +70,7 @@ class ApikeyController extends Controller
             return view('users.domains.edit_error', compact('apikey'));
         } else {
             $apikey = Apikeys::find($id);
-            $apikey->name = $request->input('label');
+            $apikey->label = $request->input('label');
             $apikey->save();
         }
 

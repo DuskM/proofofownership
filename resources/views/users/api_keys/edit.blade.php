@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/domain/{{$apikey->user_id}}" class="bn btn">Go back</a>
+    <a href="/api/{{$apikey->id}}" class="bn btn">Go back</a>
     @if(!Auth::guest())
         @if(Auth::user()->id == $apikey->user_id)
             <h1>Edit Label</h1>
@@ -23,12 +23,13 @@
 
                 {{--Delete function--}}
                 <br>
-                <p>Or you can just delete the domain</p>
+                <p>Or you can just delete the label</p>
                 <div class="form-group">
-                    {!! Form::submit('Delete Label', ['class'=>'btn btn-danger col-sm-6']) !!}
+                    {!! Form::open(['action' => ['ApikeyController@destroy', $apikey->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+                    {{Form::hidden('_method', 'DELETE')}}
+                    {{Form::submit('Delete Label', ['class' => 'btn btn-danger col-sm-6'])}}
+                    {!! !Form::close() !!}
                 </div>
-                {!! Form::close() !!}
-            </div>
             </div>
             <div class="col-sm-6">
             </div>
