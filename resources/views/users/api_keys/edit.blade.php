@@ -9,7 +9,7 @@
 
             {{--Update function--}}
             <div class="col-sm6">
-                {!! Form::model($apikey, ['method'=>'PATCH', 'action'=>['ApiKeysController@update', $apikey->id]]) !!}
+                {!! Form::model($apikey, ['method'=>'PATCH', 'action'=>['ApiKeyController@update', $apikey->id]]) !!}
                 @csrf
                 <div class="form-group">
                     {!! Form::label('label', 'New Label:') !!}

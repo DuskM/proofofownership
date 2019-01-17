@@ -13,7 +13,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Webpatser\Uuid\Uuid;
 
-class ApiKeysController extends Controller
+class ApiKeyController extends Controller
 {
     //
 
