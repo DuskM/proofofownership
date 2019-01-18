@@ -5,7 +5,7 @@
     @if(!Auth::guest())
         @if(Auth::user()->id == $apikey->user_id)
             <h1>Edit Label</h1>
-            <p><b>Current Label name {{$apikey->label}}</b></p>
+            <p><b>Current Label Name {{$apikey->label}}</b></p>
 
             {{--Update function--}}
             <div class="col-sm6">
