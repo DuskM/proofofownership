@@ -19,6 +19,7 @@ class Apikeys extends Model
         'label',
         'user_id',
         'uuid',
+        'verification_key',
     ];
 
     public static function boot()
@@ -26,7 +27,12 @@ class Apikeys extends Model
         parent::boot();
         self::creating(function ($model) {
             $model->uuid = (string)Uuid::generate();
+            $model->verification_key = (string) Uuid::generate();
         });
+    }
+
+    public function getRouteKeyName(){
+        return 'uuid';
     }
 
 

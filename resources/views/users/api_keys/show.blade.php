@@ -2,24 +2,25 @@
 
 @section('content')
     <a href="/api" class="bn btn">Go back</a>
-    {{--@if(!Auth::guest())--}}
-        {{--@if(Auth::user()->id == $apikey->user_id)--}}
+    @if(!Auth::guest())
+        @if(Auth::user()->id == $apikey->user_id)
             <h1>{{$apikey->label}}</h1>
             <br>
             <div>
                 {!!  $apikey->label!!}
                 <br><br>
+                {!! $apikey->uuid !!}
             </div>
             <hr>
             <small>Added on {{$apikey->created_at}}</small><br>
-            <a href="/api/{{$apikey->id}}/edit" class="'tn btn-default">Edit</a>
+            <a href="/domain/{{$apikey->uuid}}/edit" class="'tn btn-default">Edit</a>
             {!! Form::open(['action' => ['ApikeyController@destroy', $apikey->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
             {{Form::hidden('_method', 'DELETE')}}
             {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
             {!! !Form::close() !!}
             <hr>
-        {{--@endif--}}
-    {{--@endif--}}
+        @endif
+    @endif
 
 
 

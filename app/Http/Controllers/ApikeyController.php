@@ -15,27 +15,34 @@ use Webpatser\Uuid\Uuid;
 
 class ApikeyController extends Controller
 {
-    //
 
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-
-    public function index(){
+    public function index()
+    {
         $apikeys = Apikeys::paginate(10);
         $user = Auth::user();
         $userId = $user->id;
         return view('users.api_keys.index', compact('apikeys', 'userId'));
     }
 
+
+    public function show(Apikeys $apikey)
+    {
+        return view('users.api_keys.show', compact('apikey'));
+    }
+
+
+
     public function create(Request $request){
         $apikey = new \App\Apikeys;
         $apikey->user_id = $request->request->get('user_id');
         $user = Auth::user();
         $userId = $user->id;
-        return view('users.api_keys.create', compact('user', 'userId', 'uuid', 'apikey'));
+        return view('users.api_keys.create', compact('user', 'userId', 'apikey'));
     }
 
     public function store(Request $request){
@@ -48,11 +55,7 @@ class ApikeyController extends Controller
         $userId = Auth::user()->id;
     }
 
-    public function show($id)
-    {
-        $apikey = Apikeys::findOrFail($id);
-        return view('users.api_keys.show', compact('apikey'));
-    }
+
 
     public function edit($id)
     {

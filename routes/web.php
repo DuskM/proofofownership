@@ -24,7 +24,6 @@ Route::get('/domain', 'UserDomainController@index');
 Route::post('/domain/create', 'UserDomainController@store');
 
 Route::resource('/api', 'ApikeyController');
-Route::get('/api/{id}', 'ApikeyControll@show');
 
 //TEST OBJECTS
 

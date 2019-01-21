@@ -13,7 +13,6 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Webpatser\Uuid\Uuid;
 
-
 class UserDomainController extends Controller
 {
 
@@ -30,6 +29,15 @@ class UserDomainController extends Controller
         return view('users.domains.index', compact('domains','userId'));
     }
 
+
+    public function show(Domain $domain)
+    {
+        return view('users.domains.show', compact('domain'));
+    }
+
+
+
+
     public function store(Request $request)
     {
         if(Domain::where('name', '=', Input::get('name'))->exists()){
@@ -41,10 +49,7 @@ class UserDomainController extends Controller
             $userId = Auth::user()->id;
     }
 
-    public function show(Domain $domain)
-    {
-            return view('users.domains.show', compact('domain'));
-    }
+
 
     public function create(Request $request)
     {
@@ -53,8 +58,7 @@ class UserDomainController extends Controller
         $domain->body = $request->request->get('body');
         $user = Auth::user();
         $userId = $user->id;
-        $uuid = Uuid::generate()->string;
-        return view('users.domains.create', compact('user', 'userId', 'uuid'));
+        return view('users.domains.create', compact('user', 'userId'));
     }
 
     public function destroy($id)
