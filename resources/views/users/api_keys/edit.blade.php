@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/api/{{$api->uuid}}" class="bn btn">Go back</a>
+    <a href="/api/{{$api->uuid}}" class="bn btn-info">Go back</a>
     @if(!Auth::guest())
         @if(Auth::user()->id == $api->user_id)
             <h1>Edit Label</h1>

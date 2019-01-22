@@ -68,7 +68,7 @@ class UserDomainController extends Controller
             return redirect('/domain')->with('error', 'Unauthorized page');
         }
         $domain->delete();
-        return redirect('/domain')->with('succes', 'Domain removed');
+        return redirect('/domain')->with('alert', 'Domain removed');
     }
 
     public function edit(Domain $domain)
