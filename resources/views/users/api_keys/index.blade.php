@@ -20,7 +20,7 @@
                 @foreach($apikeys->where('user_id','=', Auth::user()->id) as $apikey)
                     <tr>
                         <td>
-                            <a href="/api/{{$apikey->id}}">{{$apikey->label}}</a>
+                            <a href="/api/{{$apikey->uuid}}">{{$apikey->label}}</a>
                             <div class="form-group" style="float:right">
 
                                 {!! Form::open(['action' => ['ApikeyController@destroy', $apikey->id], 'method' => 'POST', 'class' => 'pull-right']) !!}

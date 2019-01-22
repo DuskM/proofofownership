@@ -30,10 +30,9 @@ class ApikeyController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Apikeys $api)
     {
-        $apikey = Apikeys::findOrFail($id);
-        return view('users.api_keys.show', compact('apikey'));
+        return view('users.api_keys.show', compact('api'));
     }
 
 
@@ -58,10 +57,9 @@ class ApikeyController extends Controller
 
 
 
-    public function edit($id)
+    public function edit(Apikeys $api)
     {
-        $apikey = Apikeys::findOrFail($id);
-        return view('users.api_keys.edit', compact('apikey'));
+        return view('users.api_keys.edit', compact('api'));
     }
 
     public function update(Request $request, $id)
