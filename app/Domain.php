@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use Webpatser\Uuid\Uuid;
@@ -18,9 +17,10 @@ class Domain extends Model
         return $this->belongsTo('App\User::class');
     }
 
-        public static function boot(){
-        parent::boot();
-        self::creating(function ($model){
+        public static function boot()
+        {
+            parent::boot();
+            self::creating(function ($model){
             $model->uuid = (string) Uuid::generate();
         });
 

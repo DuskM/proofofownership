@@ -3,10 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Webpatser\Uuid\Uuid;
 use App\User;
-
-
+use Webpatser\Uuid\Uuid;
 
 class Apikeys extends Model
 {

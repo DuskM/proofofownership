@@ -26,12 +26,13 @@ class ApikeyController extends Controller
         $apikeys = Apikeys::paginate(10);
         $user = Auth::user();
         $userId = $user->id;
-        return view('users.api_keys.index', compact('apikeys', 'userId'));
+        return view('users.api_keys.index', compact('apikeys','userId'));
     }
 
 
-    public function show(Apikeys $apikey)
+    public function show($id)
     {
+        $apikey = Apikeys::findOrFail($id);
         return view('users.api_keys.show', compact('apikey'));
     }
 
