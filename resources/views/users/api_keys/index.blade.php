@@ -8,7 +8,7 @@
     </script>
 
     <div class="col-sm6">
-        <a href="/domain" class="btn btn-info">Go back</a>
+        <a href="/domain" class="btn btn-info">Go back</a><br><br>
         <h3>API Keys</h3>
         <table class="table">
             @if(count($apikeys) > 0)

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/domain/{{$domain->uuid}}" class="btn btn-info">Go back</a>
+    <a href="/domain/{{$domain->uuid}}" class="btn btn-info">Go back</a><br><br>
     @if(!Auth::guest())
         @if(Auth::user()->id == $domain->user_id)
     <h1>Edit Domain name</h1>

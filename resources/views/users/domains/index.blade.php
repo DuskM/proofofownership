@@ -24,6 +24,6 @@
     </div>
 
     <a href="/domain/create" class="btn btn-info">Add a new domain</a><br><br>
-    <a href="/api" class="btn btn-info">API Keys</a>
+    <a href="/api" class="btn btn-info">Your API Keys</a>
 
 @stop

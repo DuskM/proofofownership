@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <a href="/domain" class="bn btn-info">Go back</a>
+    <a href="/domain" class="btn btn-info">Go back</a><br><br>
     <h4>Add A New API Key</h4>
 
     {{--Add new domains--}}
