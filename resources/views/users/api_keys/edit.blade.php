@@ -9,7 +9,7 @@
 
             {{--Update function--}}
             <div class="col-sm6">
-                {!! Form::model($api, ['method'=>'PATCH', 'action'=>['ApikeyController@update', $api->id]]) !!}
+                {!! Form::model($api, ['method'=>'PATCH', 'action'=>['ApikeyController@update', $api->uuid]]) !!}
                 @csrf
                 <div class="form-group">
                     {!! Form::label('label', 'New Label:') !!}
@@ -25,7 +25,7 @@
                 <br>
                 <p>Or you can just delete the label</p>
                 <div class="form-group">
-                    {!! Form::open(['action' => ['ApikeyController@destroy', $api->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+                    {!! Form::open(['action' => ['ApikeyController@destroy', $api->uuid], 'method' => 'POST', 'class' => 'pull-right']) !!}
                     {{Form::hidden('_method', 'DELETE')}}
                     {{Form::submit('Delete Label', ['class' => 'btn btn-danger col-sm-6', 'onclick' => 'return confirm("Are you sure?")'])}}
                     {!! !Form::close() !!}

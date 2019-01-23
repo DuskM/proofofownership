@@ -31,7 +31,7 @@
                             </td>
                             <td>
                                 <div class="form-group" style="position: relative;">
-                                {!! Form::open(['action' => ['ApikeyController@destroy', $apikey->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+                                {!! Form::open(['action' => ['ApikeyController@destroy', $apikey->uuid], 'method' => 'POST', 'class' => 'pull-right']) !!}
                                 {{Form::hidden('_method', 'DELETE')}}
                                 {{Form::submit('Delete API Key', ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")'])}}
                                 {!! Form::close() !!}

@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('.btn-info').on('click', function(event) {
+                jQuery(this).next('.apikey').toggle();
+            });
+        });
+    </script>
+
     <a href="/api" class="btn btn-info">Go back</a><br><br>
     @if(!Auth::guest())
         @if(Auth::user()->id == $api->user_id)
@@ -9,7 +19,8 @@
             <div>
                 {!!  $api->label!!}
                 <br><br>
-                {!! $api->verification_key !!}
+                <input type='button' class='btn btn-info' style="position: relative; width: 320px" value='Show Api key'>
+                <p id="hide" style="display: none; position: relative;" class='apikey'>{{$api->verification_key}}</p>
             </div>
             <hr>
             <small>Added on {{$api->created_at}}</small><br>
