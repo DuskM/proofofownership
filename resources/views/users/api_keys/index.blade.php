@@ -20,12 +20,12 @@
         <a href="/domain" class="btn btn-primary">Go back</a><br><br>
         <h3>API Keys</h3>
         <table class="table">
+            <thead>
+            <tr>
+                <th>Name Of API Key</th>
+            </thead>
             @if(count($apikeys) > 0)
                     @foreach($apikeys->where('user_id','=', Auth::user()->id) as $apikey)
-                    <thead>
-                    <tr>
-                        <th>Name Of API Key</th>
-                    </thead>
                     <tbody>
                         <tr>
                             <td>
