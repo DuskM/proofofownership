@@ -15,7 +15,7 @@
         @csrf
         <div class="form-group">
             {!! Form::label('name', 'New name:') !!}
-            {!! Form::text('name', null, ['class'=>'form-control']) !!}
+            {!! Form::text('name', null, ['class'=>'form-control', 'autofocus']) !!}
         </div>
         {{--<div class="form-group">--}}
             {{--{!! Form::hidden('verified', '0') !!}--}}

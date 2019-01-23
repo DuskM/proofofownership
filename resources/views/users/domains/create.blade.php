@@ -11,7 +11,7 @@
         @csrf
         <div class="form-group">
             {!! Form::label('name', 'Domain:') !!}
-            {!! Form::text('name', null, ['class'=>'form-control']) !!}
+            {!! Form::text('name', null, ['class'=>'form-control', 'autofocus']) !!}
         </div>
         <div class="form-group">
             {!! Form::hidden('user_id', $user->id) !!}

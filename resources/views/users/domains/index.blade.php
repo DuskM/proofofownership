@@ -9,9 +9,12 @@
                 <th>Name Of Domain</th>
             </thead>
             @if(count($domains) > 0)
+                <thead>
+                <tr>
+                    <th>Name Of Domain</th>
+                </thead>
+                <tbody>
                 @foreach($domains->where('user_id','=', Auth::user()->id) as $domain)
-
-                    <tbody>
                         <tr>
                             <td><a href="/domain/{{$domain->uuid}}">{{$domain->name}}</a></td>
                         </tr>

@@ -13,7 +13,7 @@
                 @csrf
                 <div class="form-group">
                     {!! Form::label('label', 'New Label:') !!}
-                    {!! Form::text('label', null, ['class'=>'form-control']) !!}
+                    {!! Form::text('label', null, ['class'=>'form-control', 'autofocus']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::submit('Update Label', ['class'=>'btn btn-primary col-sm-6']) !!}

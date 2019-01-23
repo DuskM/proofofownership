@@ -25,8 +25,12 @@
                 <th>Name Of API Key</th>
             </thead>
             @if(count($apikeys) > 0)
+                <thead>
+                <tr>
+                    <th>Name Of API Key</th>
+                </thead>
+                <tbody>
                     @foreach($apikeys->where('user_id','=', Auth::user()->id) as $apikey)
-                    <tbody>
                         <tr>
                             <td>
                                 <a href="/api/{{$apikey->uuid}}">{{$apikey->label}}</a>
@@ -40,7 +44,7 @@
                             </div>
                         </td>
                         <td>
-                            <button id="show" class='btn btn-info' style="position: relative; width: 320px" >Show Api key</button>
+                            <input type='button'id="show" onclick="change()" class='btn btn-primary' style="position: relative; width: 320px" value='Show Api key'>
                             <p id="hide" style="display: none; position: relative;" class='apikey'>{{$apikey->verification_key}}</p>
                         </td>
                     </tr>
