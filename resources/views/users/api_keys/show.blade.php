@@ -18,7 +18,7 @@
         }
     </script>
 
-    <a href="/api" class="btn btn-info">Go back</a><br><br>
+    <a href="/api" class="btn btn-primary">Go back</a><br><br>
     @if(!Auth::guest())
         @if(Auth::user()->id == $api->user_id)
             <h1>{{$api->label}}</h1>

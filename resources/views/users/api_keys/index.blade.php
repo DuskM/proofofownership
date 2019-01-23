@@ -16,21 +16,11 @@
             else elem.value = "Hide Api key";
         }
     </script>
-
-
-
     <div class="col-sm6">
         <a href="/domain" class="btn btn-primary">Go back</a><br><br>
         <h3>API Keys</h3>
         <table class="table">
             @if(count($apikeys) > 0)
-                <thead>
-                <tr>
-                    <th>Name Of API Key</th>
-                <th>
-                </th>
-                </thead>
-                <tbody>
                     @foreach($apikeys->where('user_id','=', Auth::user()->id) as $apikey)
                     <thead>
                     <tr>
@@ -61,6 +51,6 @@
             @endif
         </table>
     </div>
-    <a href="/api/create" class="btn btn-info" style="position: relative;" >Add a new API Key</a><br>
+    <a href="/api/create" class="btn btn-primary" style="position: relative;" >Add a new API Key</a><br>
 
 @stop
