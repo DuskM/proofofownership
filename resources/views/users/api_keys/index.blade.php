@@ -8,6 +8,13 @@
                 jQuery(this).next('.apikey').toggle();
             });
         });
+
+        function change() // no ';' here
+        {
+            var elem = document.getElementById("show");
+            if (elem.value=="Hide Api key") elem.value = "Show Api key";
+            else elem.value = "Hide Api key";
+        }
     </script>
 
 
@@ -38,7 +45,7 @@
                             </div>
                         </td>
                         <td>
-                            <input type='button' class='btn btn-info' style="position: relative; width: 320px" value='Show Api key'>
+                            <input type='button'id="show" onclick="change()" class='btn btn-info' style="position: relative; width: 320px" value='Show Api key'>
                             <p id="hide" style="display: none; position: relative;" class='apikey'>{{$apikey->verification_key}}</p>
                         </td>
                     </tr>
