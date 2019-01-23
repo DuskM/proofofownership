@@ -69,7 +69,7 @@ class ApikeyController extends Controller
         ]);
         if(Apikeys::where('label', '=', Input::get('label'))->exists()){
             $apikey = Apikeys::find($id);
-            return view('users.domains.edit_error', compact('apikey'));
+            return view('users.api_keys.edit_error', compact('apikey'));
         } else {
             $apikey = Apikeys::find($id);
             $apikey->label = $request->input('label');

@@ -16,9 +16,9 @@
             {!! Form::label('name', 'New name:') !!}
             {!! Form::text('name', null, ['class'=>'form-control']) !!}
         </div>
-        <div class="form-group">
-            {!! Form::hidden('verified', '0') !!}
-        </div>
+        {{--<div class="form-group">--}}
+            {{--{!! Form::hidden('verified', '0') !!}--}}
+        {{--</div>--}}
         <div class="form-group">
             {!! Form::submit('Update Domain', ['class'=>'btn btn-primary col-sm-6']) !!}
         </div>
