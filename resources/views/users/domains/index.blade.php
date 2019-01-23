@@ -4,12 +4,13 @@
     <div class="col-sm6">
         <h3>Domains</h3>
         <table class="table">
+            <thead>
+            <tr>
+                <th>Name Of Domain</th>
+            </thead>
             @if(count($domains) > 0)
                 @foreach($domains->where('user_id','=', Auth::user()->id) as $domain)
-                    <thead>
-                    <tr>
-                        <th>Name Of Domain</th>
-                    </thead>
+
                     <tbody>
                         <tr>
                             <td><a href="/domain/{{$domain->uuid}}">{{$domain->name}}</a></td>
