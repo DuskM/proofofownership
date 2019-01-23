@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <a href="/domain/{{$domain->uuid}}" class="btn btn-primary">Go back</a><br><br>
     @if(!Auth::guest())
         @if(Auth::user()->id == $domain->user_id)
