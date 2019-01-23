@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <a href="/api" class="btn btn-primary">Go back</a><br><br>
     <h4>Add A New API Key</h4>
 
@@ -11,7 +12,7 @@
         @csrf
         <div class="form-group">
             {!! Form::label('label', 'Label:') !!}
-            {!! Form::text('label', null, ['class'=>'form-control']) !!}
+            {!! Form::text('label', null, ['class'=>'form-control', 'autofocus']) !!}
         </div>
         <div class="form-group">
             {!! Form::hidden('user_id', $user->id) !!}
