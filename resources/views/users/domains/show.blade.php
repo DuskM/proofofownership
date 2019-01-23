@@ -21,7 +21,7 @@
             <a href="/domain/{{$domain->uuid}}/edit" class="btn btn-primary">Edit</a><br><br>
             {!! Form::open(['action' => ['UserDomainController@destroy', $domain->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
             {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+            {{Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")'])}}
             {!! !Form::close() !!}
         <hr>
         @endif

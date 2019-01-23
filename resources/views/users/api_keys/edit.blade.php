@@ -27,7 +27,7 @@
                 <div class="form-group">
                     {!! Form::open(['action' => ['ApikeyController@destroy', $api->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
                     {{Form::hidden('_method', 'DELETE')}}
-                    {{Form::submit('Delete Label', ['class' => 'btn btn-danger col-sm-6'])}}
+                    {{Form::submit('Delete Label', ['class' => 'btn btn-danger col-sm-6', 'onclick' => 'return confirm("Are you sure?")'])}}
                     {!! !Form::close() !!}
                 </div>
             </div>
