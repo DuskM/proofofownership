@@ -21,7 +21,7 @@ class UserDomainController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $domains = Domain::paginate(10);
         $user = Auth::user();
@@ -80,7 +80,7 @@ class UserDomainController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'verified' => 'required'
+//            'verified' => 'required'
         ]);
         if(Domain::where('name', '=', Input::get('name'))->exists()){
             $domain = Domain::find($id);
@@ -88,7 +88,7 @@ class UserDomainController extends Controller
         } else {
             $domain = Domain::find($id);
             $domain->name = $request->input('name');
-            $domain->verified = $request->input('verified');
+//            $domain->verified = $request->input('verified');
             $domain->save();
         }
 

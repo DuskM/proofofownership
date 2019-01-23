@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/domain" class="btn btn-info">Go back</a><br><br>
+    <a href="/domain" class="btn btn-primary">Go back</a><br><br>
     @if(!Auth::guest())
         @if(Auth::user()->id == $domain->user_id)
             <h1>{{$domain->name}}</h1>
@@ -18,7 +18,7 @@
                 {{--<small>Domain verified</small><br>--}}
                 {{--<small>Verified at {{$domain->updated_at}}</small>--}}
                 {{--@endif--}}
-            <a href="/domain/{{$domain->uuid}}/edit" class="btn btn-info">Edit</a><br><br>
+            <a href="/domain/{{$domain->uuid}}/edit" class="btn btn-primary">Edit</a><br><br>
             {!! Form::open(['action' => ['UserDomainController@destroy', $domain->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
             {{Form::hidden('_method', 'DELETE')}}
             {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}

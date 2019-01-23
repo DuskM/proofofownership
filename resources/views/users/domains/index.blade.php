@@ -5,17 +5,17 @@
         <h3>Domains</h3>
         <table class="table">
             @if(count($domains) > 0)
-            <thead>
-                <tr>
-                    <th>Name Of Domain</th>
-                </thead>
-            <tbody>
                 @foreach($domains->where('user_id','=', Auth::user()->id) as $domain)
+                    <thead>
+                    <tr>
+                        <th>Name Of Domain</th>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td><a href="/domain/{{$domain->uuid}}">{{$domain->name}}</a></td>
                         </tr>
                 @endforeach
-            </tbody>
+                </tbody>
                     {{$domains->links()}}
                 @else
                     <p>No domains found</p>
@@ -23,7 +23,7 @@
         </table>
     </div>
 
-    <a href="/domain/create" class="btn btn-info">Add a new domain</a><br><br>
-    <a href="/api" class="btn btn-info">Your API Keys</a>
+    <a href="/domain/create" class="btn btn-primary">Add a new domain</a><br><br>
+    <a href="/api" class="btn btn-primary">Your API Keys</a>
 
 @stop

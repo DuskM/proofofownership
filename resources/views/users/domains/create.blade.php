@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <a href="/domain" class="btn btn-info">Go back</a><br><br>
+    <a href="/domain" class="btn btn-primary">Go back</a><br><br>
     <h4>Add A New Domain</h4>
 
     {{--Add new domains--}}
