@@ -1,11 +1,15 @@
 @extends('layouts.app')
 @section('content')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script>
-        // $(document).on('click', 'button[data-id]', function (e) {
-        //     var requested_to = $(this).attr('data-id');
-        //
-        // });
+        jQuery(document).ready(function(){
+            jQuery('.hideshow').on('click', function(event) {
+                jQuery(this).prev('.content').toggle();
+            });
+        });
     </script>
+
 
     <div class="col-sm6">
         <a href="/domain" class="bn btn">Go back</a>
@@ -29,7 +33,8 @@
                                 {!! Form::close() !!}
                             </div>
                         </td>
-                        {{--<td><button class="btn btn-primary" data-id="{{$apikey->id}}" >Show Apikey</button></td>--}}
+                        <td><div id="hide" style="display: none;" class='content'>{{$apikey->verification_key}}</div>
+                            <input type='button' class='hideshow' value='Show Api key'></td>
                     </tr>
                 @endforeach
                 {{$apikeys->links()}}
