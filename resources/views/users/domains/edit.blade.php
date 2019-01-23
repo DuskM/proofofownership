@@ -28,7 +28,7 @@
         <br>
             <p>Or you can just delete the domain</p>
         <div class="form-group">
-            {!! Form::submit('Delete Domain', ['class'=>'btn btn-danger col-sm-6']) !!}
+            {!! Form::submit('Delete Domain', ['class'=>'btn btn-danger col-sm-6', 'onclick' => 'return confirm("Are you sure?")']) !!}
         </div>
         {!! Form::close() !!}
     </div>

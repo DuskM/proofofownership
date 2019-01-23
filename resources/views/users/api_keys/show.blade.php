@@ -16,7 +16,7 @@
             <a href="/api/{{$api->uuid}}/edit" class="btn btn-info">Edit</a><br><br>
             {!! Form::open(['action' => ['ApikeyController@destroy', $api->uuid], 'method' => 'POST', 'class' => 'pull-right']) !!}
             {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+            {{Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")'])}}
             {!! !Form::close() !!}
             <hr>
         @endif

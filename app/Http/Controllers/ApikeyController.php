@@ -79,13 +79,13 @@ class ApikeyController extends Controller
         return redirect('/api')->with('success', 'Label is updated');
     }
 
-    public function destroy($id)
+    public function destroy(Apikeys $api)
     {
-        $apikey = Apikeys::find($id);
-        if(auth()->user()->id !==$apikey->user_id){
+
+        if(auth()->user()->id !==$api->user_id){
             return redirect('/api')->with('error', 'Unauthorized page');
         }
-        $apikey->delete();
+        $api->delete();
         return redirect('/api')->with('success', 'API Key removed');
     }
 

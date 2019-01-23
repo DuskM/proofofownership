@@ -29,7 +29,7 @@
 
                                 {!! Form::open(['action' => ['ApikeyController@destroy', $apikey->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
                                 {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Delete API Key', ['class' => 'btn btn-danger'])}}
+                                {{Form::submit('Delete API Key', ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")'])}}
                                 {!! Form::close() !!}
                             </div>
                         </td>
